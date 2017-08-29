@@ -1,16 +1,47 @@
 fileFormatVersion: 2
-guid: 49c64f2bb6f390d408f75b810c484081
-timeCreated: 1503718602
+guid: e95a2a3f9e4aa9d49bbfc8bba936b9ec
+timeCreated: 1503992522
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder001
-    9500000: //RootNode
+    100000: Camera
+    100002: Circle
+    100004: Circle_MeshPart0
+    100006: Circle_MeshPart1
+    100008: Circle_MeshPart2
+    100010: Lamp
+    100012: Lamp.001
+    100014: Lamp.002
+    100016: Lamp.003
+    100018: Lamp.004
+    100020: //RootNode
+    400000: Camera
+    400002: Circle
+    400004: Circle_MeshPart0
+    400006: Circle_MeshPart1
+    400008: Circle_MeshPart2
+    400010: Lamp
+    400012: Lamp.001
+    400014: Lamp.002
+    400016: Lamp.003
+    400018: Lamp.004
+    400020: //RootNode
+    2000000: Camera
+    2300000: Circle_MeshPart0
+    2300002: Circle_MeshPart1
+    2300004: Circle_MeshPart2
+    3300000: Circle_MeshPart0
+    3300002: Circle_MeshPart1
+    3300004: Circle_MeshPart2
+    4300000: Circle_MeshPart0
+    4300002: Circle_MeshPart1
+    4300004: Circle_MeshPart2
+    10800000: Lamp
+    10800002: Lamp.001
+    10800004: Lamp.002
+    10800006: Lamp.003
+    10800008: Lamp.004
   materials:
     importMaterials: 1
     materialName: 0
@@ -80,7 +111,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

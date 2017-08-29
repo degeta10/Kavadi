@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class test : MonoBehaviour {
 
+	private int npawns=0;
 	private int random=0;
 	private int cumulative=0;
 	private int maxcases=28;
+
 	public Transform[] cases;
 	public Transform pawn;
 
-	void Start () {		
+	void Start () 
+	{	
 	}
 
 	public void mainfunc()
 	{
 		random = Random.Range (1, 7);	
-		if (cumulative < 100) {
+		if (cumulative+random <25) {
 			switch (random) {
 			case 1:
 				cumulative += random;
@@ -47,7 +50,7 @@ public class test : MonoBehaviour {
 	}
 
 	void Spawn()
-	{	
+	{		
 		Vector3 spawn=cases[cumulative].transform.position;
 		pawn.transform.position=spawn;
 	}	
