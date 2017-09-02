@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5B676CAA-846D-7049-4955-D240D4DD41E4}</ProjectGuid>
+    <ProjectGuid>{48A5E87D-924C-DD43-C242-E8264F08468C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,13 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Alogirithms\SimpleGame.cs" />
      <Compile Include="Assets\Scripts\Alogirithms\ThrowDie.cs" />
      <Compile Include="Assets\Scripts\AnimationScript.cs" />
      <Compile Include="Assets\Scripts\ClickAnimation.cs" />
      <Compile Include="Assets\Scripts\Dice_Animator.cs" />
+     <Compile Include="Assets\Scripts\GuiBtn.cs" />
      <Compile Include="Assets\Scripts\test.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>E:/Unity Projects/Dice/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>F:/Github Repository/Dice/Kavadi/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

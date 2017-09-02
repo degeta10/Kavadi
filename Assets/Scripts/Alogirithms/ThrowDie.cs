@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThrowDie : MonoBehaviour {
 
 	public Transform[] cases;
 	public Transform[] pawn1;
 	public Transform[] pawn2;
+	public Button Add, Move;
+	public int npawns=6;
 
 	private int[] flag;
-	private int npawns=6;
 	private int dnumber;
 	private int choice;
+	private int k=0;
 
 	void Start () 
 	{
-		npawns = 6;
+		//npawns = 6;
+		Add.gameObject.SetActive(false);
+		Move.gameObject.SetActive(false);
 	}
 	public void Die_Throw()
 	{
@@ -35,7 +40,7 @@ public class ThrowDie : MonoBehaviour {
 				{
 					Debug.Log ("equals 1 but npawns<6");
 					int ch=0;
-					ch=Choice ();
+					//Clik ();
 					dnumber = dienumber;
 					if(ch==1)
 						Moveposition (dnumber);
@@ -88,18 +93,28 @@ public class ThrowDie : MonoBehaviour {
 		Debug.Log ("ChangePlayer function called");
 	}
 
-	public int Choice()
+	public int Choice(int i)
 	{
 		Debug.Log ("Choice function called");
-		if (Input.GetKey(KeyCode.A))//Move existing pawn
+		Add.gameObject.SetActive(true);
+		Move.gameObject.SetActive(true);
+		if(i==1)
 		{
-			choice = 1;			
+			choice = 1;
+			Debug.Log ("Choice 1 picked");
+			return choice;
 		}
-		else if (Input.GetKey(KeyCode.S))//Add new pawn
+		else if (i==2)
 		{
-			choice = 2;			
+			choice = 2;
+			Debug.Log ("Choice 2 picked");
+			return choice;
 		}
 		return choice;
+	}
+	public void Clik(int i)
+	{
+		Choice (i);
 	}
 
 	public void MovablePawns(int dnum,int kp)
@@ -121,7 +136,7 @@ public class ThrowDie : MonoBehaviour {
 
 	public void SpawnAtZero(int index,int numberofpawns)
 	{	
-		Debug.Log ("Spawn function called"+index);	
+		Debug.Log ("Spawn function called !");	
 
 		for(int i=index;i>=numberofpawns;i--)
 		{
