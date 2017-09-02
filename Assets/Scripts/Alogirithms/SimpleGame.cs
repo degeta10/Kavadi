@@ -30,6 +30,7 @@ public class SimpleGame : MonoBehaviour {
 		pawn2.transform.position = pos2;
 		Debug.Log ("placed player 2 in initial position");
 	}
+
 	void Start ()
 	{
 		player1.gameObject.SetActive (true);
@@ -41,12 +42,9 @@ public class SimpleGame : MonoBehaviour {
 		Debug.Log ("Die_Throw is called");
 		if (npawns1 == 0)
 		{
-			int dienumber = Random.Range (1, 7);
+			int dienumber = Random.Range (1, 1);
 			Debug.Log ("Die number= " + dienumber);
-
-			currentposof1 = currentposof1 + dienumber;
-			Debug.Log ("currentpos1 = " + currentposof1);
-			Spawn1 (currentposof1);
+			Spawn1 (dienumber);
 		}
 		player1.gameObject.SetActive (false);
 		player2.gameObject.SetActive (true);
@@ -57,31 +55,64 @@ public class SimpleGame : MonoBehaviour {
 		Debug.Log ("Die_Throw is called");
 		if (npawns2 == 0) 
 		{
-			int dienumber = Random.Range (1, 7);
+			int dienumber = Random.Range (1, 1);
 			Debug.Log ("Die number= "+dienumber);
-
-			currentposof2 = currentposof2 + dienumber;
-			Debug.Log ("currentpos2 = "+currentposof2);
-			Spawn2 (currentposof2);			
+			Spawn2 (dienumber);					
 		}
 		player1.gameObject.SetActive (true);
 		player2.gameObject.SetActive (false);
 	}
 
-	void Spawn1(int index)
-	{
-		Vector3 spawnpos=casesof1[index].transform.position;
-
-		pawn1.transform.position=spawnpos;
-		Debug.Log ("Spawn1 called" );
+	void Spawn1(int dienumber)
+	{		
+		if (currentposof1 == 0 /*&& dienumber == 1 && dienumber == 6*/) 
+		{
+			currentposof1 = currentposof1 + 1;
+			pawn1.transform.position = casesof1 [currentposof1].transform.position;
+		} 
+		else
+			if(currentposof1>=1)
+			{
+				currentposof1 = currentposof1 + dienumber;
+				Vector3 spawnpos=casesof1[currentposof1].transform.position;
+					if (spawnpos == pawn2.transform.position)
+					{
+						pawn2.transform.position = casesof2 [0].transform.position;
+						currentposof2 = 0;
+						pawn1.transform.position = spawnpos;
+					} 
+					else
+					{
+						pawn1.transform.position = spawnpos;
+					}
+				Debug.Log ("Spawn1 called");
+			}
 	}
 
-	void Spawn2(int index)
+	void Spawn2(int dienumber)
 	{
-		Vector3 spawnpos=casesof2[index].transform.position;
-
-		pawn2.transform.position=spawnpos;
-		Debug.Log ("Spawn2 called" );
+		if (currentposof2 == 0 /*&& dienumber == 1 && dienumber == 6*/)
+		{
+			currentposof2 = currentposof2 + 1;
+			pawn2.transform.position = casesof2 [currentposof2].transform.position;
+		} 
+		else
+			if(currentposof2>=1)
+			{
+				currentposof2 = currentposof2 + dienumber;
+				Vector3 spawnpos = casesof2 [currentposof2].transform.position;
+					if (spawnpos == pawn1.transform.position) 
+					{
+						pawn1.transform.position = casesof1 [0].transform.position;
+						currentposof1 = 0;
+						pawn2.transform.position = spawnpos;
+					}
+					else
+					{
+						pawn2.transform.position = spawnpos;
+					}
+				Debug.Log ("Spawn2 called");
+			}
 	}	
 
 	void Update () 
